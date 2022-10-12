@@ -49,10 +49,7 @@ export default function News(props) {
 
                 </div>
 
-                {/* <div className="container d-flex justify-content-between">
-    <button disabled={page} className="btn btn-dark">&laquo; Previous</button>
-    <button className="btn btn-dark">Next &raquo;</button>
-  </div> */}
+
 
             </div>
         </>
