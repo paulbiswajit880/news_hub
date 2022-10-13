@@ -5,6 +5,7 @@ import News from './components/News';
 import propTypes from 'prop-types';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import LoadingBar from 'react-top-loading-bar'
+import MoveTop from './components/MoveTop';
 
 
 
@@ -29,6 +30,7 @@ function App() {
           <Route exact key="sports" path="/sports" element={<News setProgress={setProgress} country='in' category='sports' />}></Route>
           <Route exact key="technology" path="/technology" element={<News setProgress={setProgress} country='in' category='technology' />}></Route>
         </Routes>
+        <MoveTop/>
       </Router>
 
     </>
