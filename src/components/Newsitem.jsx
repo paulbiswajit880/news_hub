@@ -13,7 +13,7 @@ export default function Newsitem(props) {
     <span className="visually-hidden">unread messages</span>
   </span>
   
-          <h5 className="card-title text-success" style={{height:"70px",overflow:"hidden"}} >{props.title}</h5>
+          <h5 className="card-title text-success" style={{height:"75px",overflow:"hidden"}} >{props.title}</h5>
           <span className="badge mx-2 text-bg-warning">{props.source}</span>
           <p className="card-text my-1" style={{height: "75px",
     overflow: "hidden"}}>{props.dsc}</p>
