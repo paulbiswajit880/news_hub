@@ -1,7 +1,8 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { useAuth0 } from "@auth0/auth0-react";
 export default function Home() {
-  
+  const { loginWithRedirect ,logout, isAuthenticated, user } = useAuth0();
   return (
    <> 
       <nav className="navbar navbar-expand-lg navbar-dark sticky-top bg-dark">
@@ -36,9 +37,27 @@ export default function Home() {
         </li>
   </ul>
 
+  <div className="button">
+    {!isAuthenticated ? <button className='btn btn-success py-1' onClick={() => loginWithRedirect()}>Log In</button>
+    :
+    <> <img className='mx-3' style={{width:"35px",borderRadius:"50%"}} src={user.picture} alt="" />
+    <button className='btn btn-danger py-1' onClick={() => logout({ returnTo: window.location.origin })}>
+    Log Out
+  </button> </>}
+  
+  
+  </div>
+
     </div>
   </div>
 </nav>
+
+{isAuthenticated && (
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Welcome to NewsHub !</strong> {user.name}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+)}
 
 
 </>
